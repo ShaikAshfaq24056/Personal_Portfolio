@@ -1,0 +1,322 @@
+import { useEffect, useState } from "react";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Mail, Phone, MapPin, Linkedin, Github, ExternalLink } from "lucide-react";
+
+const Portfolio = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const skills = ["Python", "SQL", "HTML", "CSS"];
+  const softSkills = [
+    "Exceptional communication skills",
+    "Time-Management Skills", 
+    "Ability to work independently and as part of a team"
+  ];
+  
+  const languages = ["Urdu", "English", "Hindi", "Telugu"];
+  const hobbies = ["Drawing", "Cooking", "Workout", "Editing", "Reading Manga and Manhwa", "Playing Chess"];
+  
+  const strengths = ["Patience", "Adaptability", "Quick Learner", "Leadership", "Active Listening", "Strong Work Ethic"];
+
+  const projects = [
+    "Detection of Rare Species of Animals in Wildlife Conservation with Conventional Neural Network and Compare the Accuracy with different Algorithms",
+    "Spectacle Microscope with UV and LED light"
+  ];
+
+  const certifications = [
+    "Completed the Python course with an A grade from Keys Institutions by SK Technologies Educational Society",
+    "Completed 7-day bootcamp with Dev Town by Google Developer Student Clubs", 
+    "Appreciation for the effective participation in E-Quiz on Math Aptitude",
+    "Completed 7-day bootcamp with Dev Town by AWS community builders"
+  ];
+
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-24 h-24 bg-primary/20 rounded-full blur-xl animate-pulse-tech"></div>
+        <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-primary/15 rounded-full blur-lg animate-float" style={{ animationDelay: '1s' }}></div>
+      </div>
+      
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
+        <div className="absolute inset-0 bg-gradient-dark opacity-50"></div>
+        <div className="relative z-10 text-center max-w-4xl mx-auto">
+          <div className={`transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+            <div className="relative mb-8">
+              <div className="w-60 h-60 mx-auto rounded-full bg-gradient-primary p-2 animate-glow shadow-glow">
+                <img 
+                  src="/lovable-uploads/8b6b40c1-e3bb-4d01-9e6c-c5c8c49452ed.png"
+                  alt="Shaik Ashfaq"
+                  className="w-full h-full rounded-full object-cover"
+                />
+              </div>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+              SHAIK ASHFAQ
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+              <span className="text-primary font-semibold">&lt;</span>
+              Software Developer & AI Enthusiast
+              <span className="text-primary font-semibold">/&gt;</span>
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <Button variant="outline" size="lg" className="group hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                <Mail className="w-5 h-5 mr-2 group-hover:animate-float" />
+                ashfaq2004shaik@gmail.com
+              </Button>
+              <Button variant="outline" size="lg" className="group hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                <Phone className="w-5 h-5 mr-2 group-hover:animate-float" />
+                8309286259
+              </Button>
+            </div>
+            <div className="flex justify-center items-center gap-2 text-muted-foreground">
+              <MapPin className="w-5 h-5" />
+              <span>28-437/2c, Ramnagar Colony, Chittoor, Andhra Pradesh 517001</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Career Objective */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="animate-fade-in">
+            <h2 className="text-4xl font-bold text-center mb-12 text-primary">
+              <span className="text-muted-foreground font-mono text-lg">01.</span> Career Objective
+            </h2>
+            <Card className="p-8 bg-gradient-tech border-border shadow-tech backdrop-blur-sm">
+              <p className="text-lg text-foreground leading-relaxed text-center">
+                I am seeking a role that allows me to continuously learn and advance my career in the dynamic field of 
+                computer science. I aim to contribute my expertise in software development to create impactful solutions. 
+                I want to work in an environment that encourages me to succeed and grow professionally where I can 
+                utilize my skills and contribute to the betterment of my workplace.
+              </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Education */}
+      <section className="py-20 px-4 bg-secondary/20">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-primary">
+            <span className="text-muted-foreground font-mono text-lg">02.</span> Education
+          </h2>
+          <div className="space-y-6">
+            <Card className="p-6 bg-card border-border shadow-card hover:shadow-glow transition-all duration-300 group">
+              <div className="flex justify-between items-start mb-4">
+                <div>
+                  <h3 className="text-xl font-bold text-primary group-hover:text-primary-glow transition-colors duration-300">
+                    Saveetha School of Engineering
+                  </h3>
+                  <p className="text-foreground">Pursuing Bachelor's of Engineering in Artificial Intelligence and Data Science department</p>
+                  <p className="text-muted-foreground">Chennai, Tamil Nadu</p>
+                  <p className="text-primary font-semibold">Current CGPA - 8.0</p>
+                </div>
+                <Badge variant="outline" className="border-primary text-primary">2021-2025</Badge>
+              </div>
+            </Card>
+
+            <Card className="p-6 bg-card border-border shadow-card hover:shadow-glow transition-all duration-300 group">
+              <div className="flex justify-between items-start mb-4">
+                <div>
+                  <h3 className="text-xl font-bold text-primary group-hover:text-primary-glow transition-colors duration-300">
+                    Sri Chaitanya Junior College
+                  </h3>
+                  <p className="text-foreground">Intermediate Education in Mathematics, Physics and Chemistry</p>
+                  <p className="text-muted-foreground">Board of Intermediate Education Chittoor, Andhra Pradesh</p>
+                  <p className="text-primary font-semibold">Percentage – 84%</p>
+                </div>
+                <Badge variant="outline" className="border-primary text-primary">2019-2021</Badge>
+              </div>
+            </Card>
+
+            <Card className="p-6 bg-card border-border shadow-card hover:shadow-glow transition-all duration-300 group">
+              <div className="flex justify-between items-start mb-4">
+                <div>
+                  <h3 className="text-xl font-bold text-primary group-hover:text-primary-glow transition-colors duration-300">
+                    Sri Chaitanya School
+                  </h3>
+                  <p className="text-foreground">10th, Board of Secondary Education</p>
+                  <p className="text-muted-foreground">Chittoor, Andhra Pradesh</p>
+                  <p className="text-primary font-semibold">CGPA – 10.0</p>
+                </div>
+                <Badge variant="outline" className="border-primary text-primary">2018-2019</Badge>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-primary">
+            <span className="text-muted-foreground font-mono text-lg">03.</span> Skills
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="p-6 bg-gradient-dark border-border shadow-card">
+              <h3 className="text-2xl font-bold mb-6 text-primary">Technical Skills</h3>
+              <div className="flex flex-wrap gap-3">
+                {skills.map((skill, index) => (
+                  <Badge 
+                    key={index} 
+                    variant="secondary" 
+                    className="text-sm py-2 px-4 bg-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </Card>
+            
+            <Card className="p-6 bg-gradient-dark border-border shadow-card">
+              <h3 className="text-2xl font-bold mb-6 text-primary">Soft Skills</h3>
+              <ul className="space-y-3">
+                {softSkills.map((skill, index) => (
+                  <li key={index} className="flex items-center text-foreground">
+                    <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-float"></div>
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section className="py-20 px-4 bg-secondary/20">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-primary">
+            <span className="text-muted-foreground font-mono text-lg">04.</span> Projects
+          </h2>
+          <div className="space-y-6">
+            {projects.map((project, index) => (
+              <Card key={index} className="p-6 bg-card border-border shadow-card hover:shadow-glow transition-all duration-300 group">
+                <div className="flex items-start">
+                  <div className="w-3 h-3 bg-primary rounded-full mr-4 mt-2 group-hover:animate-float"></div>
+                  <p className="text-foreground leading-relaxed">{project}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications & Experience */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-4xl font-bold mb-8 text-primary">
+                <span className="text-muted-foreground font-mono text-lg">05.</span> Certifications
+              </h2>
+              <div className="space-y-4">
+                {certifications.map((cert, index) => (
+                  <Card key={index} className="p-4 bg-gradient-dark border-border shadow-card hover:shadow-glow transition-all duration-300 group">
+                    <div className="flex items-start">
+                      <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 group-hover:animate-float"></div>
+                      <p className="text-foreground text-sm leading-relaxed">{cert}</p>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+            
+            <div>
+              <h2 className="text-4xl font-bold mb-8 text-primary">
+                <span className="text-muted-foreground font-mono text-lg">06.</span> Experience
+              </h2>
+              <Card className="p-6 bg-gradient-dark border-border shadow-card hover:shadow-glow transition-all duration-300">
+                <div className="flex items-start">
+                  <div className="w-3 h-3 bg-primary rounded-full mr-4 mt-2 animate-float"></div>
+                  <p className="text-foreground leading-relaxed">
+                    Organized a National Level Technical Symposium at Saveetha School of Engineering
+                  </p>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Strengths, Languages & Hobbies */}
+      <section className="py-20 px-4 bg-secondary/20">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="p-6 bg-gradient-dark border-border shadow-card">
+              <h3 className="text-2xl font-bold mb-6 text-primary">Strengths</h3>
+              <div className="flex flex-wrap gap-2">
+                {strengths.map((strength, index) => (
+                  <Badge 
+                    key={index} 
+                    variant="outline" 
+                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default text-xs"
+                  >
+                    {strength}
+                  </Badge>
+                ))}
+              </div>
+            </Card>
+            
+            <Card className="p-6 bg-gradient-dark border-border shadow-card">
+              <h3 className="text-2xl font-bold mb-6 text-primary">Languages</h3>
+              <div className="space-y-3">
+                {languages.map((language, index) => (
+                  <div key={index} className="flex items-center">
+                    <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-float"></div>
+                    <span className="text-foreground">{language}</span>
+                  </div>
+                ))}
+              </div>
+            </Card>
+            
+            <Card className="p-6 bg-gradient-dark border-border shadow-card">
+              <h3 className="text-2xl font-bold mb-6 text-primary">Hobbies</h3>
+              <div className="flex flex-wrap gap-2">
+                {hobbies.map((hobby, index) => (
+                  <Badge 
+                    key={index} 
+                    variant="secondary" 
+                    className="bg-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default text-xs"
+                  >
+                    {hobby}
+                  </Badge>
+                ))}
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Footer */}
+      <footer className="py-12 px-4 border-t border-border">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="flex justify-center gap-6 mb-6">
+            <Button variant="outline" size="lg" className="group hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+              <Linkedin className="w-5 h-5 mr-2 group-hover:animate-float" />
+              LinkedIn
+            </Button>
+            <Button variant="outline" size="lg" className="group hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+              <Github className="w-5 h-5 mr-2 group-hover:animate-float" />
+              GitHub
+            </Button>
+          </div>
+          <p className="text-muted-foreground">
+            © 2024 Shaik Ashfaq. Designed with passion for innovation.
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Portfolio;
